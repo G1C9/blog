@@ -1,0 +1,120 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="${title}"></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <style>
+
+        .main-container {
+            width: 1320px;
+            margin: 0 auto;
+            margin-top: 100px;
+        }
+
+        .main-container-title {
+            text-align: center;
+            margin-bottom: 115px;
+        }
+
+        .list-items {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .items {
+            width: 420px;
+            height: 350px;
+            background-color: #cff4fc;
+        }
+
+        .item-title {
+            text-align: center;
+            margin: 0;
+            margin-top: 25px;
+        }
+
+        .item-subtitle {
+            text-align: center;
+            margin: 0;
+            margin-top: 25px;
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .item-btn {
+            width: 102px;
+            margin-top: 60px;
+        }
+
+    </style>
+</head>
+<body>
+
+<header th:insert="blocks/header :: header"></header>
+
+<main>
+    <div class="main-container">
+        <h1 class="main-container-title">
+            Возможности сайта
+        </h1>
+        <div class="list-items">
+
+            <div class="items blog-item">
+                <div class="blog">
+                    <h3 class="item-title">
+                        Посмотреть статьи
+                    </h3>
+                    <h4 class="item-subtitle">
+                        Изучите различные статьи, опубликованные на сайте
+                    </h4>
+                    <div class="btn-container">
+                        <a href="/blog" class="item-btn btn btn-warning">
+                            Смотреть
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="items add-blog-item">
+                <div class="add-blog">
+                    <h3 class="item-title">
+                        Добавить статью
+                    </h3>
+                    <h4 class="item-subtitle">
+                        Поделитесь своими идеями, добавив статью на сайт
+                    </h4>
+                    <div class="btn-container">
+                        <a href="/blog/add" class="item-btn btn btn-warning">
+                            Смотреть
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="items comment-item">
+                <div class="comment">
+                    <h3 class="item-title">
+                        Посмотреть комментарии
+                    </h3>
+                    <h4 class="item-subtitle">
+                        Ознакомьтесь с мнениями других пользователей
+                    </h4>
+                    <div class="btn-container">
+                        <a href="/comments" class="item-btn btn btn-warning">
+                            Смотреть
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</main>
+
+</body>
+</html>

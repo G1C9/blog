@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Комментарии сайта</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+</head>
+<style>
+    .comment-title {
+        margin: 0;
+        margin-bottom: 5px;
+    }
+    .comment-subtitle {
+        margin: 0;
+        margin-bottom: 10px;
+    }
+</style>
+<body>
+
+<header th:insert="blocks/header :: header"></header>
+
+<div class="container mt-5">
+    <form action="/comments/add" method="get" class="alert alert-info mt-2">
+        <h2 class="comment-title">
+            Добавьте свой комментарий
+        </h2>
+        <h4 class="comment-subtitle">
+            Он очень важен для нас
+        </h4>
+        <a href="/comments/add" class="btn btn-warning">
+            Оставить
+        </a>
+    </form>
+    <h1>
+        Комментарии сайта
+    </h1>
+    <div th:each="el : ${comments}" class="alert alert-info mt-2">
+        <h3><b>Статья:</b> <span th:text="${el.title}"></span></h3>
+        <h4><b>Имя:</b> <span  th:text="${el.name}"></span></h4>
+        <p><b>Описание:</b> <span th:text="${el.descr}"></span></p>
+        <a th:href="@{'/comments/' + ${el.id}}" class="btn btn-warning">Подробнее</a>
+    </div>
+</div>
+
+</body>
+</html>
