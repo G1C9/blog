@@ -7,5 +7,5 @@
 - Maven
 - Thymeleaf
 - MVC
-- JDBC
+- JPA
 - MySql
