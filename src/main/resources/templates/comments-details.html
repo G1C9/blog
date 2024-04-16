@@ -23,7 +23,7 @@
         <h3><b>Статья:</b> <span th:text="${el.title}"></span></h3>
         <h4><b>Имя:</b> <span  th:text="${el.name}"></span></h4>
         <p><b>Описание:</b> <span th:text="${el.descr}"></span></p>
-        <p><span th:text="${el.text}"></span></p>
+        <p><span th:text="${el.text}" style="overflow-wrap: break-word;"></span></p>
         <form th:action="'/comments/' + ${el.id} + '/remove'" method="post">
             <!--параметр _method в HTML-форме указывает фактический HTTP-метод-->
             <input type="hidden" name="_method" value="delete"/>

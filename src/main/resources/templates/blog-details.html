@@ -13,7 +13,7 @@
     <div th:each="el : ${post}" class="alert alert-info mt-2">
         <h1 th:text="${el.title}"></h1>
         <p><b>Заголовок:</b> <span th:text="${el.anons}"></span></p>
-        <p><b>Описание:</b> <span th:text="${el.full_text}"></span></p>
+        <p><b>Описание:</b> <span th:text="${el.full_text}" style="overflow-wrap: break-word;"></span></p>
         <a th:href="'/blog/' + ${el.id} + '/edit'" class="btn btn-warning">Редактировать</a><br><br>
         <form th:action="'/blog/' + ${el.id} + '/remove'" method="post">
             <!--параметр _method в HTML-форме указывает фактический HTTP-метод-->
